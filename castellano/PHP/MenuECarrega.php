@@ -9,7 +9,7 @@ ini_set('session.cache_expire',3);
 ini_set("session.gc_maxlifetime",3);
 session_start();
 
-$idCap = $_GET["n"];
+$idCap = mysqli_real_escape_string($mysqli,$_GET["n"]);
 
 $sub = false;
 

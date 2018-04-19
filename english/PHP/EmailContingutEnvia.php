@@ -4,8 +4,8 @@ include($_SERVER['DOCUMENT_ROOT']."/rao/PonQuita.php");
 
 //////:id, :op, :nom, :origen, :desti
 
-$id = $_POST["id"];
-$op = $_POST["op"];
+$id = mysqli_real_escape_string($mysqli,$_POST["id"]);
+$op = mysqli_real_escape_string($mysqli,$_POST["op"]);
 
 switch($op)
 {
@@ -30,10 +30,10 @@ if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($m
 	$Contingut = str_replace('src="../Images', 'src="http://inc.uab.cat/Images', $Contingut);
 }
 
-$nom = $_POST["nom"];
-$origen = $_POST["origen"];
-$desti = $_POST["desti"];
-$TA = $_POST["TA"];
+$nom = mysqli_real_escape_string($mysqli,$_POST["nom"]);
+$origen = mysqli_real_escape_string($mysqli,$_POST["origen"]);
+$desti = mysqli_real_escape_string($mysqli,$_POST["desti"]);
+$TA = mysqli_real_escape_string($mysqli,$_POST["TA"]);
 
 $mensaje = '
 <html>

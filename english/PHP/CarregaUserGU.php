@@ -1,7 +1,7 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 
-$id = $_GET["id"];
+$id = mysqli_real_escape_string($mysqli,$_GET["id"]);
 
 $SQL = "SELECT * FROM Users WHERE IdUser = ".$id;
 

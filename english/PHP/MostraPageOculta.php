@@ -3,9 +3,9 @@ error_reporting (5);
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include($_SERVER['DOCUMENT_ROOT']."/rao/PonQuita.php"); 
 
-$id = $_GET["id"]; 
+$id = mysqli_real_escape_string($mysqli,$_GET["id"]); 
 
-switch($_GET["op"])
+switch(mysqli_real_escape_string($mysqli,$_GET["op"]))
 {
 	case 1: 	$SQL = "SELECT Titol,Contingut, IdCapMenu FROM LinMenu WHERE IdLinMenu = " . $id;
 				break;
@@ -44,7 +44,7 @@ if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($m
  
 
 
-if ($_GET["op"] == "1")
+if (mysqli_real_escape_string($mysqli,$_GET["op"]) == "1")
 {
 	if ($Id != '84')
 	{
@@ -56,7 +56,7 @@ if ($_GET["op"] == "1")
 	}
 }
 
-echo $Titol ."|". $Contingut."|".$Ruta."|".$id.",".$_GET["op"]."|".$IdCap;
+echo $Titol ."|". $Contingut."|".$Ruta."|".$id.",".mysqli_real_escape_string($mysqli,$_GET["op"])."|".$IdCap;
 ?>
 
 <?php

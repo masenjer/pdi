@@ -2,10 +2,12 @@
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include("CS.php"); 
 
-if (CS())
+session_start();
+
+if (CS()&&$_SESSION["Creacio"])
 {
-	$id = $_GET["id"];
-	$IMG = $_GET["IMG"];
+	$id = mysqli_real_escape_string($mysqli,$_GET["id"]);
+	$IMG = mysqli_real_escape_string($mysqli,$_GET["IMG"]);
 	
 	if ($IMG)
 	{

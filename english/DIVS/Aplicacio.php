@@ -46,7 +46,7 @@ function CarregaAplicacio()
            
               
                   
-                    <span class="header-title"><a href="index.php"><?php echo $cabecera_superior; ?></a></span>
+                    <span class="header-title"><a href="/"><?php echo $cabecera_superior; ?></a></span>
                   
                
           
@@ -69,7 +69,7 @@ function CarregaAplicacio()
                     
                     
                         <div class="col-md-6 hidden-xs hidden-sm">
-                          <h1 class="page-title" role="heading" aria-level="1"><a href="index.php"><?php echo $cabecera_superior; ?></a></h1>
+                          <h1 class="page-title" role="heading" aria-level="1"><a href="/"><?php echo $cabecera_superior; ?></a></h1>
                     
                     </div>
                 
@@ -178,7 +178,7 @@ function CarregaAplicacio()
     
       <div class="credits">
         <ul class="legal">   
-          <li><a href="index.php" title="">Inici </a></li>
+          <li><a href="" title="">Inici </a></li>
           <li><a href="/web/coneix-la-uab-cei/itineraris/avis-legal-1345668257191.html" title="">Avís legal </a></li>
           <li><a href="/web/coneix-la-uab-cei/itineraris/proteccio-de-dades-1345668257177.html" title=" ">Protecció de dades</a></li>
           <li><a href="http://crd.uab.cat" title="">Sobre el web</a></li>  

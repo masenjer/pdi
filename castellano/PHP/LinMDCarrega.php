@@ -47,7 +47,7 @@ $resultado = '
 	}
 	
 	
-//	if ($_GET["h"]=='1')	
+//	if (mysqli_real_escape_string($mysqli,$_GET["h"])=='1')	
 //	{
 //	$resultado = $resultado . '<tr><td height="10px"></td></tr>	';		
 //	}
@@ -59,7 +59,7 @@ $resultado = '
 $resultado = $resultado . '<tr><td height="15px"></td></tr>';
 //$resultado = $resultado . '<tr><td height="10px"></td></tr>';
 
-if ($_GET["h"]!='1')	
+if (mysqli_real_escape_string($mysqli,$_GET["h"])!='1')	
 	{
 		$resultado = $resultado . '<td></td>';
 	}

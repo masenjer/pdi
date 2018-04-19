@@ -7,8 +7,8 @@ include("PublicacionsComptadorResultats.php");
 
 session_start();
 
-$text = Pon($_POST["txt"]);
-$tipus = Pon($_POST["tipus"]);
+$text = Pon(mysqli_real_escape_string($mysqli,$_POST["txt"]));
+$tipus = Pon(mysqli_real_escape_string($mysqli,$_POST["tipus"]));
 
 $txt = explode(" ",$text);
 

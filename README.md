@@ -1,6 +1,16 @@
 <h1>ICACS</h1>
-<h2> versión de gestor 2.0.2 </h2>
+<h2> versión de gestor 2.0.3 </h2>
 
+<p>
+versión 2.0.3:
+<ul>
+	<li>Cambios en seguridad</li>
+	<ul>
+		<li>Control inyeccion código mysqli</li>
+		<li>Control de permisos de usuarios en edición y creación</li>	
+	</ul>
+</ul>
+</p>
 <p>
 versión 2.0.2:
 <ul>

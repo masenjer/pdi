@@ -2,10 +2,10 @@
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include("CS.php"); 
 
-if (CS())
+if (CS()&&$_SESSION["Noticias"])
 {
-	$id = $_POST["id"];
-	$r = $_POST["r"];
+	$id = mysqli_real_escape_string($mysqli,$_POST["id"]);
+	$r = mysqli_real_escape_string($mysqli,$_POST["r"]);
 	
 	if (!$r) $r = "NULL";
 	

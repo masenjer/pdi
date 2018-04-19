@@ -23,21 +23,21 @@ function CarregaAplicacioNews()
             <div class="BuscadorDossierNoticies"><?php MostraBuscadorDossierNoticies(); ?></div>
 			<div class="ContenidoDossierNoticies">
             	<?php
-					if ($_GET["Noticia"]){
-						echo $noticias->Carga($_GET["Noticia"]);	
+					if (mysqli_real_escape_string($mysqli,$_GET["Noticia"])){
+						echo $noticias->Carga(mysqli_real_escape_string($mysqli,$_GET["Noticia"]));	
 					}
 				?>
             </div>
             <div class="ListadoDossierNoticies">
             	<?php 
-					echo $noticias->CargaListadoNews($_SESSION["SearchText"],$_SESSION["SearchDesde"],$_SESSION["SearchHasta"], $_GET["Noticia"]);	
+					echo $noticias->CargaListadoNews($_SESSION["SearchText"],$_SESSION["SearchDesde"],$_SESSION["SearchHasta"], mysqli_real_escape_string($mysqli,$_GET["Noticia"]));	
 				?>
             </div>
             <?php
-				if ($_GET["Noticia"]){
+				if (mysqli_real_escape_string($mysqli,$_GET["Noticia"])){
 			?>
             	<script>
-					$('.ListadoDossierNoticies').scrollTop($('#DIVLlistatNoticies<?php echo $_GET["Noticia"]; ?>').offset().top - $('.ListadoDossierNoticies').offset().top);
+					$('.ListadoDossierNoticies').scrollTop($('#DIVLlistatNoticies<?php echo mysqli_real_escape_string($mysqli,$_GET["Noticia"]); ?>').offset().top - $('.ListadoDossierNoticies').offset().top);
                 </script>
             <?php			
 				}
@@ -78,8 +78,8 @@ function MostraBuscadorDossierNoticies(){
         	<td height="10px"></td>
         </tr>
         <tr>
-        	<td colspan="2" align="left"><button class="TextDossierNoticies" onClick="SearchAllNews(<?php echo $_GET["Noticia"]; ?>);">Mostrar tots els resultats </button></td>
-        	<td colspan="2" align="right"><button class="TextDossierNoticies" onClick="SearchNews(<?php echo $_GET["Noticia"]; ?>);">Cercar resultats</button></td>
+        	<td colspan="2" align="left"><button class="TextDossierNoticies" onClick="SearchAllNews(<?php echo mysqli_real_escape_string($mysqli,$_GET["Noticia"]); ?>);">Mostrar tots els resultats </button></td>
+        	<td colspan="2" align="right"><button class="TextDossierNoticies" onClick="SearchNews(<?php echo mysqli_real_escape_string($mysqli,$_GET["Noticia"]); ?>);">Cercar resultats</button></td>
         </tr>
     </table>
 <?php

@@ -26,10 +26,10 @@ if (!$result2 = $mysqli->query($SQL2))printf("Errormessage: %s\n", mysqli_error(
 
 while ($row2 = $result2->fetch_assoc())
 {
-	$direccion = 'index.php#!/'.$row2["Titol"].'_'.$row2["IdLinMenu"].'_1';
+	$direccion = '#!/'.$row2["Titol"].'_'.$row2["IdLinMenu"].'_1';
 }
 
-if (!$direccion) $direccion = 'index.php#!/MS_'.$row["IdCapMenu"];
+if (!$direccion) $direccion = '#!/MS_'.$row["IdCapMenu"];
  
 
 
@@ -87,7 +87,7 @@ if (!$direccion) $direccion = 'index.php#!/MS_'.$row["IdCapMenu"];
 
 	echo  '
 		<td bgcolor="#333333" class="ButtonMS" '.$stilo.'  height="28px" id="tdMS'.$row["IdCapMenu"].'"  align="left">
-			<a href="index.php#!/MS_'.$row["IdCapMenu"].'" '.$DobleClic.'>
+			<a href="#!/MS_'.$row["IdCapMenu"].'" '.$DobleClic.'>
 			<input type="hidden" id="tdMSAntic'.$row["IdCapMenu"].'" value="'.$row["Titol"].'">
 			<div id="DIVTitolMS'.$row["IdCapMenu"].'" class="DIVMenuS">'.$row["Titol"].'</div></a></td>
 			

@@ -22,8 +22,8 @@ function MostraEstructuraDirectori(){
 <?php
     $Conn = "rao/sas_con.php";
     
-    if ($_SESSION["Edicio"]=="1") $res = MostraDirectoriPrivat('',$Conn,$_GET["Categoria"]);
-    else $res = MostraDirectoriPublic('',$Conn,$_GET["Categoria"]);
+    if ($_SESSION["Edicio"]=="1") $res = MostraDirectoriPrivat('',$Conn,mysqli_real_escape_string($mysqli,$_GET["Categoria"]));
+    else $res = MostraDirectoriPublic('',$Conn,mysqli_real_escape_string($mysqli,$_GET["Categoria"]));
 	
 	$res = explode("|",$res);
 ?>

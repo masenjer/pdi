@@ -59,7 +59,7 @@ function MostraHomeSenseNoticies(){
         </div>
 
     -->
-    </div>
+    </div> 
 
 
 </div>
@@ -86,7 +86,7 @@ function MostraHomeAmbNoticies(){
                     <div class="col-sm-6 col-md-6">
       
     
-        <a href="index.php/#!/Activitats_532_1" class="b-access petit" title="">
+        <a href="#!/Activitats_532_1" class="b-access petit" title="">
         
             <div class="img-bg" style="background-image: url(/imgDes/horaris,8.png);"></div>     
             <span class="text">Activitats</span>

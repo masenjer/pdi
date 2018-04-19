@@ -59,7 +59,7 @@ if ($_SESSION["Creacio"]||$_SESSION["Edicio"]||$_SESSION["Noticias"]||$_SESSION[
 function MostraLogin()
 {
 ?>
-<form id="loginAdmin" action="index.php" method="post"  background="/img/BlancoTrans.png" style="display:none"></form>
+<form id="loginAdmin" action="/" method="post"  background="/img/BlancoTrans.png" style="display:none"></form>
 <table width="300px" cellpadding="0" cellspacing="10" border="0" align="center" background="/img/BlancoTrans.png">
 	<tr>
     	<td height="10px"></td>

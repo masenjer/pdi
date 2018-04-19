@@ -1,6 +1,6 @@
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="/vendor/JQuery/jquery-1.9.1.js"></script>
 
- <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+ <script src="/vendor/JQuery/jquery-migrate-1.1.0.js"></script>
  
     <script src="/vendor/JQuery/jquery-ui-1.8.7.custom.min.js" type="text/javascript"> </script>
     <script src="/vendor/JQuery/jquery.ui.datepicker-es.js" type="text/javascript"> </script>

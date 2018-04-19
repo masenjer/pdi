@@ -8,7 +8,7 @@ ini_set('session.cache_expire',3);
 ini_set("session.gc_maxlifetime",3);
 session_start();
 
-$idCat = $_POST["IdCat"];
+$idCat = mysqli_real_escape_string($mysqli,$_POST["IdCat"]);
 
 $cuenta = 0;
 

@@ -5,9 +5,9 @@
 	$noticias = new News;
 	$noticias->Conexion = "/rao/rao_con.php";
 	
-	$Desde = ($_POST["Desde"])?InsertFecha($_POST["Desde"]):"";
-	$Hasta = ($_POST["Hasta"])?InsertFecha($_POST["Hasta"]):"";	
+	$Desde = (mysqli_real_escape_string($mysqli,$_POST["Desde"]))?InsertFecha(mysqli_real_escape_string($mysqli,$_POST["Desde"])):"";
+	$Hasta = (mysqli_real_escape_string($mysqli,$_POST["Hasta"]))?InsertFecha(mysqli_real_escape_string($mysqli,$_POST["Hasta"])):"";	
 	
 
-	echo $noticias->CargaListadoNews($_POST["txt"],$Desde,$Hasta,$_POST["id"]);
+	echo $noticias->CargaListadoNews(mysqli_real_escape_string($mysqli,$_POST["txt"]),$Desde,$Hasta,mysqli_real_escape_string($mysqli,$_POST["id"]));
 ?>

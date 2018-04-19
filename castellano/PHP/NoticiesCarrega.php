@@ -3,7 +3,7 @@ include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include("Fechas.php");
 session_start();
 
-$id = $_GET["Id"];
+$id = mysqli_real_escape_string($mysqli,$_GET["Id"]);
 if ($id != "")
 {
 	$SQL = "SELECT * FROM Noticias WHERE IDSite = ".$_SESSION["IdSite"]." AND IdNoticia = ".$id;

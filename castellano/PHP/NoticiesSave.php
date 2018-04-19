@@ -6,21 +6,21 @@ include("CS.php");
 
 session_start();
 
-if (CS())
+if (CS()&&$_SESSION["Noticias"])
 {
-	$T = $_POST["T"];
+	$T = mysqli_real_escape_string($mysqli,$_POST["T"]);
 	$T = Pon($T);
-	$C = $_POST["C"];
+	$C = mysqli_real_escape_string($mysqli,$_POST["C"]);
 	$C = Pon($C);
-	$F = $_POST["F"];
+	$F = mysqli_real_escape_string($mysqli,$_POST["F"]);
 	$F = InsertFecha($F);
-//	$FP = $_POST["FP"];
+//	$FP = mysqli_real_escape_string($mysqli,$_POST["FP"]);
 //	$FP = InsertFecha($FP);
-//	$FD = $_POST["FD"];
+//	$FD = mysqli_real_escape_string($mysqli,$_POST["FD"]);
 //	$FD = InsertFecha($FD);
-	$IMG = $_POST["IMG"];
-	$id = $_POST["id"];
-	$NOU = $_POST["NOU"];
+	$IMG = mysqli_real_escape_string($mysqli,$_POST["IMG"]);
+	$id = mysqli_real_escape_string($mysqli,$_POST["id"]);
+	$NOU = mysqli_real_escape_string($mysqli,$_POST["NOU"]);
 	$NOU = Pon($NOU);
 	
 	if ($id == "")

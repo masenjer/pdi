@@ -1,15 +1,21 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 
-$IdCat = $_POST["IdCat"];
+session_start();
 
-$SQL = "UPDATE Directori SET IdDirectoriCategoria = NULL WHERE IdDirectoriCategoria = ".$IdCat;
-if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
-
-
-$SQL = "DELETE FROM DirectoriCategoria WHERE IdDirectoriCategoria = " . $IdCat; 
-if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+if ($_SESSION["Creacio"]){
 
 
-echo $idCap;//."|".$IdLin;
+	$IdCat = mysqli_real_escape_string($mysqli,$_POST["IdCat"]);
+
+	$SQL = "UPDATE Directori SET IdDirectoriCategoria = NULL WHERE IdDirectoriCategoria = ".$IdCat;
+	if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+
+
+	$SQL = "DELETE FROM DirectoriCategoria WHERE IdDirectoriCategoria = " . $IdCat; 
+	if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+
+
+	echo $idCap;//."|".$IdLin;
+}
 ?>

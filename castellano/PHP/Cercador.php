@@ -3,7 +3,7 @@ include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 
 session_start();
 
-$texto = $_GET["texto"];
+$texto = mysqli_real_escape_string($mysqli,$_GET["texto"]);
 
 if ($texto != "")
 {
@@ -75,7 +75,7 @@ while ($row = $result->fetch_assoc()){
 	////////Resultados del capMenu
 	echo '
 		<tr>
-			<td><a href="index.php#!/MS_'.$row["IdCapMenu"].'" class="RutaCercador">'.$row["Titol"].'</a></td>
+			<td><a href="#!/MS_'.$row["IdCapMenu"].'" class="RutaCercador">'.$row["Titol"].'</a></td>
 		</tr>
 		<tr>
 			<td height="5px"></td>
@@ -108,10 +108,10 @@ while ($row = $result->fetch_assoc()){
 	
 	echo '
 		<tr>
-			<td><a href="index.php#!/'.$row["TitolL"].'_'.$row["IdLinMenu"].'_1" class="RutaCercador">'.$TitolC.' > '.$row["TitolL"].'</a></td>
+			<td><a href="#!/'.$row["TitolL"].'_'.$row["IdLinMenu"].'_1" class="RutaCercador">'.$TitolC.' > '.$row["TitolL"].'</a></td>
 		</tr>
 		<tr>
-			<td><a href="index.php#!/'.$row["TitolL"].'_'.$row["IdLinMenu"].'_1" class="fuenteCercador">'.TrobaContingut($row["Contingut"],$texto).'</a></td>
+			<td><a href="#!/'.$row["TitolL"].'_'.$row["IdLinMenu"].'_1" class="fuenteCercador">'.TrobaContingut($row["Contingut"],$texto).'</a></td>
 		</tr>
 		<tr>
 			<td height="5px"></td> 

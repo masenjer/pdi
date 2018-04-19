@@ -40,7 +40,7 @@ function MostraDirectoriFitxa()
 					
 					include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 					
-					$SQL = "SELECT Perfil, Inves, Publi FROM Directori WHERE  IdDirectori = ".$_GET["id"];
+					$SQL = "SELECT Perfil, Inves, Publi FROM Directori WHERE  IdDirectori = ".mysqli_real_escape_string($mysqli,$_GET["id"]);
 				
 					if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli)); 
 					while ($row = $result->fetch_assoc()){
@@ -73,7 +73,7 @@ function CargaCuerpoAdminPestanyaDirectoriFitxa($form, $txt){
 ?>
 <div id="DIVCuerpo<?php echo $form; ?>Directori" class="DadesFitxaDirectori" style="display:none;">
 	<textarea id="TACuerpo<?php echo $form; ?>Directori" class="fuenteContingut" rows="30" style="width:100%"><?php echo $txt ?></textarea>
-    <button class="fuenteContingut" onClick="GuardaSubFitxaDirectori('<?php echo $form ?>',<?php echo $_GET["id"] ?>)" style=" margin-top:10px;">Guardar Informació de la pestanya</button>
+    <button class="fuenteContingut" onClick="GuardaSubFitxaDirectori('<?php echo $form ?>',<?php echo mysqli_real_escape_string($mysqli,$_GET["id"]) ?>)" style=" margin-top:10px;">Guardar Informació de la pestanya</button>
 </div>    
 <?php
 }
@@ -92,7 +92,7 @@ function MostraEstructuraDirectoriFitxaPrivat(){
 	include $Conn;
 	
 	
-	$row = json_decode(CarregaDadesProfile_JSON($_GET["id"], $Conn),true);
+	$row = json_decode(CarregaDadesProfile_JSON(mysqli_real_escape_string($mysqli,$_GET["id"]), $Conn),true);
 
 		$arrayCategoria1 = CategoriaDirectoriCargaSelect($row["IdDirectoriCategoria1"], $Conn);
 		$arrayCategoria2 = CategoriaDirectoriCargaSelect($row["IdDirectoriCategoria2"], $Conn);
@@ -181,7 +181,7 @@ function MostraEstructuraDirectoriFitxaPublic(){
     $Conn = "rao/sas_con.php";
 	include $Conn;
 	
-	$row = json_decode(CarregaDadesProfile_JSON($_GET["id"], $Conn),true);
+	$row = json_decode(CarregaDadesProfile_JSON(mysqli_real_escape_string($mysqli,$_GET["id"]), $Conn),true);
 
 		if ($row["Imatge"]) $IMG = '<img class="IMGFitxaDirectori" src="../IMGDirectori/'.$row["Imatge"].'"  alt="'.$row["Nom"].' '.$row["Cognoms"].'" title="'.$row["Nom"].' '.$row["Cognoms"].'">';
 		else $IMG = "";

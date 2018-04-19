@@ -1,8 +1,6 @@
 <?php
 function MostraIMGHome()
 {
-      include ($_SERVER['DOCUMENT_ROOT']."/rao/ini.php");
-
 ?>
 <script src="/rao/JS/IMGHome.js" type="text/javascript"></script>
 	
@@ -111,11 +109,11 @@ function MostraIMGHome()
                                                       <div>
                                                         <h3 class="text" aria-level="3" role="heading">
                                                             
-                                                                <?php echo $titol_carousel ; ?>
+                                                                Máster en diagnóstico y tratamiento del pie diabético
                                                             
                                                         </h3>
                                                             
-                                                                  <p class="banner-lema"><?php echo $desc_carousel ; ?></p>
+                                                                  <p class="banner-lema">Facultad de Medicina UAB</p>
                                                                   <span class="ico arrow" aria-hidden="true"></span>
                                                                                                         
                                                       </div>

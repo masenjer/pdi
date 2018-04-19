@@ -1,14 +1,21 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include($_SERVER['DOCUMENT_ROOT']."/rao/PonQuita.php"); 
+session_start();
 
-$id = $_GET["id"];
-$titol = $_GET["titol"];
-$titol2 = Pon($titol);
-
-$SQL = "UPDATE CapMenu SET Titol = '".$titol2."' WHERE IdCapMenu =" . $id;
-if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+if ($_SESSION["Edicio"]){
 
 
-echo $id."|".Quita($titol);
+	$id = mysqli_real_escape_string($mysqli,$_GET["id"]);
+	$titol = mysqli_real_escape_string($mysqli,$_GET["titol"]);
+	$titol2 = Pon($titol);
+
+	$SQL = "UPDATE CapMenu SET Titol = '".$titol2."' WHERE IdCapMenu =" . $id;
+	if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+
+
+	echo $id."|".Quita($titol);
+
+}
+
 ?>

@@ -139,7 +139,7 @@ function EditaTitolLPage(id)
 }
 function CancelaTitolLin(id)
 {
-	var cont = '<a href = "index.php#!/'+$('#tdMEhrefAntic'+id).val()+'_1" style="text-decoration:none;" class="fuenteML">'+
+	var cont = '<a href = "#!/'+$('#tdMEhrefAntic'+id).val()+'_1" style="text-decoration:none;" class="fuenteML">'+
 	'			<div id="DIVTitolLPage'+id+'">'+$('#tdMEAntic'+id).val()+'</div>'+
 			'</a>';
 	$('#tdME'+id).html(cont);
@@ -164,7 +164,7 @@ function EditaTitolMS(id)
 
 function CancelaTitolMS(id)
 {
-	$('#tdMS'+id).html('<a href="index.php#!/MS_'+id+'"><div id="DIVTitolMS'+id+'" class="DIVMenuS">'+$('#tdMSAntic'+id).val()+'</div></a>');
+	$('#tdMS'+id).html('<a href="#!/MS_'+id+'"><div id="DIVTitolMS'+id+'" class="DIVMenuS">'+$('#tdMSAntic'+id).val()+'</div></a>');
 	
 	//document.getElementById("tdMS"+id).ondblclick =  function (){EditaTitolMS(id)};
 }
@@ -181,7 +181,7 @@ function LlegadaGuardaTitolMS(data)
 	
 	var cadena = data.split("|");
 	$('#tdMSAntic'+cadena[0]).val(cadena[1]);
-	$('#tdMS'+cadena[0]).html('<a href="index.php#!/MS_'+cadena[0]+'"><div id="DIVTitolMS'+cadena[0]+'" class="DIVMenuS">'+cadena[1]+'</div>');
+	$('#tdMS'+cadena[0]).html('<a href="#!/MS_'+cadena[0]+'"><div id="DIVTitolMS'+cadena[0]+'" class="DIVMenuS">'+cadena[1]+'</div>');
 	//document.getElementById("tdMS"+cadena[0]).ondblclick =  function (){EditaTitolMS(cadena[0])};
 }
 
@@ -235,7 +235,7 @@ function EditaTitolLPage(id)
 }
 function CancelaTitolLin(id)
 {
-	var cont = '<a href = "index.php#!/'+$('#tdMEhrefAntic'+id).val()+'_1" style="text-decoration:none;" class="fuenteML">'+
+	var cont = '<a href = "#!/'+$('#tdMEhrefAntic'+id).val()+'_1" style="text-decoration:none;" class="fuenteML">'+
 	'			<div id="DIVTitolLPage'+id+'">'+$('#tdMEAntic'+id).val()+'</div>'+
 			'</a>';
 	$('#tdME'+id).html(cont);
@@ -244,6 +244,7 @@ function CancelaTitolLin(id)
 
 function GuardaTitolLin(id)
 {
+
 	var titol = $('#TextTitolLpage'+id).val();
 	$.get("PHP/LinPageGuardaTitol.php",{id:id,titol:titol},LlegadaGuardaTitolLin);
 }
@@ -255,11 +256,9 @@ function LlegadaGuardaTitolLin(data)
 
 	var cadena = data.split("|");
 	
-	var cont = '<a href = "index.php#!/'+$('#tdMEhrefAntic'+cadena[0]).val()+'_1" style="text-decoration:none;" class="fuenteML">'+
-	'			<div id="DIVTitolLPage'+cadena[0]+'">'+cadena[1]+'</div>'+
-			'</a>';
+	var cont = '<div id="DIVTitolLPage'+cadena[0]+'">'+cadena[1]+'</div>';
 	$('#tdME'+cadena[0]).html(cont);
-	$('#tdMEAntic'+id).val(cadena[1]);
+	$('#tdMEAntic'+cadena[0]).val(cadena[1]);
 	
 }
 

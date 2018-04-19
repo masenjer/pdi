@@ -1,5 +1,5 @@
 <?php
-$name = $_GET["name"];
+$name = mysqli_real_escape_string($mysqli,$_GET["name"]);
 $destino = "../DocsDROW/";
 
 move_uploaded_file ( $_FILES [ 'Imatge' ][ 'tmp_name' ], $destino . '/' . $name); 

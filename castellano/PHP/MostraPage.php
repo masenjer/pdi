@@ -5,9 +5,9 @@ session_start();
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include($_SERVER['DOCUMENT_ROOT']."/rao/PonQuita.php"); 
 
-$id = $_GET["id"]; 
+$id = mysqli_real_escape_string($mysqli,$_GET["id"]); 
 
-switch($_GET["op"])
+switch(mysqli_real_escape_string($mysqli,$_GET["op"]))
 {
 	case 1: 	$SQL = "SELECT Titol,Contingut, Tipus, IdCapMenu, IdSite FROM LinMenu WHERE IdLinMenu = " . $id;
 				break;
@@ -15,6 +15,7 @@ switch($_GET["op"])
 				break;
 
 }
+
 
 /////Primero compruebo que no se trate de un nodo padre
 
@@ -50,7 +51,7 @@ if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($m
  
 
 
-if ($_GET["op"] == "1")
+if (mysqli_real_escape_string($mysqli,$mysqli,$_GET["op"]) == "1")
 {
 	if ($Id != '84')
 	{
@@ -58,7 +59,7 @@ if ($_GET["op"] == "1")
 
 		<ul class="breadcrumb"> 
 			<li>
-				<a href="index.php">Inici</a>
+				<a href="/">Inici</a>
 			</li> 
 			<li>
 				<a href="#!/MS_'.$IdCap.'">'.$TitolCap.'</a>
@@ -72,7 +73,7 @@ if ($_GET["op"] == "1")
 	}
 }
 
-echo $Titol ."|". $Contingut."|".$Ruta."|".$id.",".$_GET["op"]."|".$IdCap."|".$Tipus;
+echo $Titol ."|". $Contingut."|".$Ruta."|".$id.",".mysqli_real_escape_string($mysqli,$_GET["op"])."|".$IdCap."|".$Tipus;
 ?>
 
 <?php
@@ -81,7 +82,7 @@ function BuscaRuta($IdLin)
 	include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 	
 	$SQL = "SELECT Titol,IdLinMenuRel, IdCapMenu FROM LinMenu WHERE IdLinMenu = ".$IdLin;
-	if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+	if (!$result = $mysqli->query($SQL))printf("Errormdddessage: %s\n", mysqli_error($mysqli));
 
 
 	 while ($row = $result->fetch_assoc())

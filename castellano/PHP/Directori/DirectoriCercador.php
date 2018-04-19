@@ -9,9 +9,9 @@ session_start();
 
 $Conn = "/rao/rao_con.php";
 
-$text = Pon($_POST["txt"]);
+$text = Pon(mysqli_real_escape_string($mysqli,$_POST["txt"]));
 
-$idC = Pon($_POST["idC"]);
+$idC = Pon(mysqli_real_escape_string($mysqli,$_POST["idC"]));
 //if (!$idC) $idC = '';
 
 $txt = explode(" ",$text);

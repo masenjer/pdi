@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 session_start();
  
-$sel = $_GET["sel"];
+$sel = mysqli_real_escape_string($mysqli,$_GET["sel"]);
 
 
 $SQL = "SELECT * FROM CapMenu WHERE IdSite = ".$_SESSION["IdSite"]." order by Orden";

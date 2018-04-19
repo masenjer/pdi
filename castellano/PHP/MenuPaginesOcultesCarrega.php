@@ -10,7 +10,7 @@ session_start();
 if ($_SESSION["Creacio"]=="1")
 {
 	
-	$idCap = $_GET["n"];
+	$idCap = mysqli_real_escape_string($mysqli,$_GET["n"]);
 	
 	
 	$SQL = "SELECT * FROM LinMenu WHERE IdSite =".$_SESSION["IdSite"]." AND Tipus = 2  order by orden";
@@ -43,7 +43,7 @@ if ($_SESSION["Creacio"]=="1")
 		</td>
 		  
 		<td id="tdME'.$row["IdLinMenu"].'" align="left"  height="25px" class="fuenteMenuPageOculta" style="padding-top:10px;">
-			<a href = "index.php#!/'.$row["Titol"].'_'.$row["IdLinMenu"].'_1" style="text-decoration:none;" class="fuenteML">
+			<a href = "#!/'.$row["Titol"].'_'.$row["IdLinMenu"].'_1" style="text-decoration:none;" class="fuenteML">
 				<div id="DIVTitolLPage'.$row["IdLinMenu"].'">'.$row["Titol"].'</div>
 			</a>
 		</td>';
@@ -69,7 +69,7 @@ if ($_SESSION["Creacio"]=="1")
 					<tr>
 						<td>
 							<div id="DIVVinclePaginaOculta'.$row["IdLinMenu"].'" style="position:absolute; display:none; padding:30px; background:#666;" onmouseout="AmagaVinclePaginaOculta('.$row["IdLinMenu"].');">
-								index.php#!/'.$row["Titol"].'_'.$row["IdLinMenu"].'_1
+								#!/'.$row["Titol"].'_'.$row["IdLinMenu"].'_1
 							</div>
 						</td>
 					</tr>					

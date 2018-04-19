@@ -2,9 +2,9 @@
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 session_start();
  
-$sel1 = $_GET["sel1"];
-$sel2 = $_GET["sel2"];
-$id = $_GET["id"];
+$sel1 = mysqli_real_escape_string($mysqli,$_GET["sel1"]);
+$sel2 = mysqli_real_escape_string($mysqli,$_GET["sel2"]);
+$id = mysqli_real_escape_string($mysqli,$_GET["id"]);
 
 if ($id != "Ocultes") $SQL = "SELECT * FROM LinMenu WHERE IdSite = ".$_SESSION["IdSite"]." AND IdCapMenu = $id AND Tipus <> 2 order by Orden";
 else $SQL = "SELECT * FROM LinMenu WHERE IdSite = ".$_SESSION["IdSite"]." AND Tipus = 2 order by Orden";

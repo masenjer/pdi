@@ -1,5 +1,5 @@
 <?php
-$op = $_GET["op"];
+$op = mysqli_real_escape_string($mysqli,$_GET["op"]);
 
 
 switch ($op)

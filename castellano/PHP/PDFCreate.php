@@ -5,8 +5,8 @@ require(($_SERVER['DOCUMENT_ROOT']."/vendor/dompdf/dompdf_config.inc.php");
 
 error_reporting(0);
 
-$id = $_GET["id"];
-$op = $_GET["op"];
+$id = mysqli_real_escape_string($mysqli,$_GET["id"]);
+$op = mysqli_real_escape_string($mysqli,$_GET["op"]);
  
 switch($op)
 {

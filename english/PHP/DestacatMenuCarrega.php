@@ -10,7 +10,7 @@ $SQL = "SELECT * FROM Destacat WHERE IdSite =".$_SESSION["IdSite"]." order by Or
 $resultado = '
 <table width="100%"  cellpadding="0" cellspacing="0" border="0" class="fuenteLinNoticia">';
 
-	if (($_SESSION["Noticias"]=="1") && ($_GET["h"]=='1'))
+	if (($_SESSION["Noticias"]=="1") && (mysqli_real_escape_string($mysqli,$_GET["h"])=='1'))
 	{	
 		$resultado = $resultado.'<tr><td align="right" height="25px"><button class="EditButton" onClick="AbreGestorDestacats();"></td></tr><tr>';
 	}
@@ -21,7 +21,7 @@ while ($row = $result->fetch_assoc()){
 	$resultado = $resultado . '
 	<tr valign="middle">';
 
-	if ($_GET["h"]!='1')	
+	if (mysqli_real_escape_string($mysqli,$_GET["h"])!='1')	
 	{	
 		$accion =  'onClick="CargaDestacatFitxa('.$row["IdDestacat"].');"';
 		$resultado = $resultado . '
@@ -69,7 +69,7 @@ while ($row = $result->fetch_assoc()){
 	
 	$primero = false;	
 	
-//	if ($_GET["h"]=='1')	
+//	if (mysqli_real_escape_string($mysqli,$_GET["h"])=='1')	
 //	{
 //	$resultado = $resultado . '<tr><td height="10px"></td></tr>	';		
 //	}
@@ -80,7 +80,7 @@ while ($row = $result->fetch_assoc()){
 $resultado = $resultado . '<tr><td height="15px"></td></tr>';
 //$resultado = $resultado . '<tr><td height="10px"></td></tr>';
 
-if ($_GET["h"]!='1')	
+if (mysqli_real_escape_string($mysqli,$_GET["h"])!='1')	
 	{
 		$resultado = $resultado . '<td></td>';
 	}

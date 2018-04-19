@@ -2,9 +2,9 @@
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include($_SERVER['DOCUMENT_ROOT']."/rao/PonQuita.php"); 
 
-$id = $_GET["id"]; 
+$id = mysqli_real_escape_string($mysqli,$_GET["id"]); 
 
-switch($_GET["op"])
+switch(mysqli_real_escape_string($mysqli,$_GET["op"]))
 {
 	case "1": 	$SQL = "SELECT Titol,Contingut FROM LinMD WHERE  IdLinMD = " . $id;
 				break;

@@ -2,21 +2,26 @@
 include($_SERVER['DOCUMENT_ROOT']."/rao/rao_con.php");
 include($_SERVER['DOCUMENT_ROOT']."/rao/PonQuita.php"); 
 
+session_start();
+
+if ($_SESSION["Usuarios"]){
+
+
 ////id:id,N:N,A:A,E:E,U:U,P:P,R1:R1,R2:R2,R3:R3,R4:R4
 
-$N = $_POST["N"];
+$N = mysqli_real_escape_string($mysqli,$_POST["N"]);
 $N = Pon($N);
-$A = $_POST["A"];
+$A = mysqli_real_escape_string($mysqli,$_POST["A"]);
 $A = Pon($A);
-$E = $_POST["E"];
-$U = $_POST["U"];
-$P = sha1(sha1($_POST["P"]));
-$R1 = $_POST["R1"];
-$R2 = $_POST["R2"];
-$R3 = $_POST["R3"];
-$R4 = $_POST["R4"];
+$E = mysqli_real_escape_string($mysqli,$_POST["E"]);
+$U = mysqli_real_escape_string($mysqli,$_POST["U"]);
+$P = sha1(sha1(mysqli_real_escape_string($mysqli,$_POST["P"])));
+$R1 = mysqli_real_escape_string($mysqli,$_POST["R1"]);
+$R2 = mysqli_real_escape_string($mysqli,$_POST["R2"]);
+$R3 = mysqli_real_escape_string($mysqli,$_POST["R3"]);
+$R4 = mysqli_real_escape_string($mysqli,$_POST["R4"]);
 
-$id = $_POST["id"];
+$id = mysqli_real_escape_string($mysqli,$_POST["id"]);
 
 if ($id == "")
 {	
@@ -51,4 +56,5 @@ else
 }
 
 echo $SQL;
+}
 ?>

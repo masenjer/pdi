@@ -27,10 +27,10 @@ echo '
 
 	while ($row2 = $result2->fetch_assoc())
 	{
-		$direccion = 'index.php#!/'.$row2["Titol"].'_'.$row2["IdLinMenu"].'_1';
+		$direccion = '#!/'.$row2["Titol"].'_'.$row2["IdLinMenu"].'_1';
 	}
 
-	if (!$direccion) $direccion = 'index.php#!/MS_'.$row["IdCapMenu"];
+	if (!$direccion) $direccion = '#!/MS_'.$row["IdCapMenu"];
 
 	
 
@@ -51,7 +51,7 @@ echo '
 	{
 		echo '
 				<li>
-					<a href="index.php#!/'.$row2["Titol"].'_'.$row2["IdLinMenu"].'_1">'.$row2["Titol"].'</a>
+					<a href="#!/'.$row2["Titol"].'_'.$row2["IdLinMenu"].'_1">'.$row2["Titol"].'</a>
 					
 				</li>
 		';
