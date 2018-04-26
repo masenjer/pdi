@@ -5,19 +5,19 @@ session_start();
 if ($_SESSION["IdSite"]==0){
 
 	//Títol de l'aplicació
-	$titol_APP = "Máster universitario en investigación clínica aplicada en ciencias de la salud"; 
+	$titol_APP = "JPDI - Junta de Personal Docent i Investigador"; 
 
 	//Descripció de l'aplicació
-	$descripcio_APP = "Formamos investigadores solventes capaces de gestar y de llevar a buen termino proyectos de investigación vinculados a su trayectoria clínica.";
+	$descripcio_APP = "";
 
 	//Texto de la cabcera que te lleva a la home cuando pulsas encima
-	$cabecera_superior = "Máster universitario en investigación clínica aplicada en ciencias de la salud";
+	$cabecera_superior = "JPDI - Junta de Personal Docent i Investigador";
 
 	//Text del carousel
-	$titol_carousel = "Máster universitario en investigación clínica aplicada en ciencias de la salud";
-	$desc_carousel = "";//"Facultat de medicina";
+	$titol_carousel = "JPDI - Junta de Personal Docent i Investigador";
+	$desc_carousel = "UAB";//"Facultat de medicina";
 
-}elseif($_SESSION["IdSite"] == 1){
+}/*elseif($_SESSION["IdSite"] == 1){
 		//Títol de l'aplicació
 	$titol_APP = "Master's degree in applied clinical research in health sciences"; 
 
@@ -32,5 +32,5 @@ if ($_SESSION["IdSite"]==0){
 	$desc_carousel = "";//"UAB";
 
 }
-
+*/
 ?>
