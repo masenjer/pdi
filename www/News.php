@@ -26,7 +26,7 @@ $_SESSION["IdSite"] = 0;
 
 <body onload="CarregaPagina()" class="FondoBody">
 <?php include "AvisoCookies.php"; ?>
-<?php include_once("../analyticstracking.php") ?>
+
 
 <?php 
 	MostraMenuLateralDerecho();

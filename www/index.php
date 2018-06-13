@@ -20,7 +20,7 @@ $_SESSION["IdSite"] = 0;
 
 <body onLoad="CarregaPagina()" onClick="$('#ResultatCerca').hide('slow')">
 <?php // include "AvisoCookies.php"; ?>
-<?php include_once("../analyticstracking.php") ?>
+
 
 <?php 
 	//MostraMenuLateralDerecho();

@@ -23,7 +23,7 @@ header('Content-type: text/html; charset=utf-8');?>
 
 <body onload="CarregaPagina()" class="FondoBody">
 <?php include "AvisoCookies.php"; ?>
-<?php include_once("../analyticstracking.php") ?>
+
 
 <?php 
 	MostraMenuLateralDerecho();
