@@ -36,12 +36,12 @@ if ($_SESSION["Edicio"]){
 
 	if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli)); 
 	}
-	catch(Exception $e){
-		echo $e;
-	}
+	
 
 	echo "1";
 
-}
+}catch(Exception $e){
+		echo $e;
+	}
 
 ?>

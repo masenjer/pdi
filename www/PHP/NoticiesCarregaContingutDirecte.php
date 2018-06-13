@@ -6,9 +6,9 @@ include("PHP/Fechas.php");
 session_start();
 
 
-	echo '<div class="col-md-12">
-		<h2 class="section-title" aria-level="2" role="heading"> Notícies ';
-    
+	/*echo '<div class="col-md-12">
+		<h2 class="section-title" aria-level="2" role="heading"> Notícies ';*/
+  echo '<div class="row">';  
 
 	
 	if ($_SESSION["Noticias"]=="1")
@@ -16,7 +16,7 @@ session_start();
 		echo '<span class="glyphicon glyphicon-edit" aria-hidden="true" 	onClick="AbreGestorNoticias()"></span>';
 	}
 
-	echo '</h2></div>';
+	//echo '</h2></div>';
 	
 
 
@@ -47,8 +47,15 @@ if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($m
 	$resultado = $resultado . '
 	
 		<article class="post">
-			<h3>'.Quita($row["Titol"]).'</h3>
-			'.Quita($row["Cos"]).'
+			<a class="embed-responsive embed-responsive-16by9" href="javascript:void(0);">
+			<img src="/imgNot/'.$_SESSION["IdSite"].'/'.$row["Image"].'" alt="'.$row["Titol"].'"> 
+			</a>
+
+			<h3 aria-level="3" role="heading">
+				<a href="javascript:void(0);">'.$row["Titol"].'</a> 
+			</h3>
+			'//<h3>'.Quita($row["Titol"]).'</h3>
+			.Quita($row["Cos"]).'
 		</article>
 	</div>';	
 //	}
@@ -57,14 +64,18 @@ if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($m
 }
 
  
-
+/*
 $resultado .= '
 <div class="col-sm-12">
 	<a role="button" class="view-more" href="News.php">Totes les notícies</a>
 </div>
 ';
 
+*/
+
+
 echo $resultado;
+echo '</div>';
 ?>
 
 <?php

@@ -36,12 +36,12 @@ function MostraMenuCapcalera()
                     <span><a href="https://siastd.uab.es/pcde/" alt="Directori de la UAB" class="bullet">Directori<span class="ico arrow" aria-hidden="true"></span></a></span>
                     
                 </div>
-                <!--
+
                 <ul class="idiomes">
                     <li><a href='/castellano/' lang="es" name='Castellano'>Castellano</a></li>
                     <li class="last-child"><a href='/english/' lang="en" name='English'>English</a></li>
                 </ul>
-                -->
+                
                 
                <?php /* 
             

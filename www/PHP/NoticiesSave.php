@@ -22,20 +22,30 @@ if (CS()&&$_SESSION["Noticias"])
 	$id = mysqli_real_escape_string($mysqli,$_POST["id"]);
 	$NOU = mysqli_real_escape_string($mysqli,$_POST["NOU"]);
 	$NOU = Pon($NOU);
+
+	
+	$FP = date('Y/m/d');
+	$FD = date('Y/m/d');
 	
 	if ($id == "")
 	{	
 		$SQL = "INSERT INTO Noticias(Titol, Cos, FechaNot, FechaPub, FechaDesPub, Image, NOU, IdSite) VALUES ('$T','$C','$F','$FP','$FD','$IMG',$NOU,".$_SESSION["IdSite"].")";
 		if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
 
-		
-		$SQL = "SELECT IdNoticia FROM Noticias ORDER BY IdNoticia DESC LIMIT 1";
-		if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+			//echo $SQL;
 
 		
-		while($row = mysql_fetch_array($result))
+		$SQL = "SELECT IdNoticia FROM Noticias ORDER BY IdNoticia DESC LIMIT 1";
+		//echo $SQL;
+		if (!$result = $mysqli->query($SQL))printf("Errormessage: %s\n", mysqli_error($mysqli));
+
+			//echo $SQL;
+
+		
+		while($row = mysqli_fetch_array($result))
 		{
-			$id = $row["IdNoticia"]; 	
+			$id = $row["IdNoticia"]; 
+			//echo ",".$id;	
 		}
 	
 	}
