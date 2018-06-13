@@ -37,13 +37,14 @@ function MostraMenuCapcalera()
                     
                 </div>
 
+               <?php /* 
                 <ul class="idiomes">
                     <li><a href='/castellano/' lang="es" name='Castellano'>Castellano</a></li>
                     <li class="last-child"><a href='/english/' lang="en" name='English'>English</a></li>
                 </ul>
                 
                 
-               <?php /* 
+               
             
                 <ul class="xarxes-socials">
                     <!-- Display results -->
