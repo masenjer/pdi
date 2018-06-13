@@ -81,7 +81,7 @@ function MostraHomeAmbNoticies(){
         </div>
             
         <div class="col-md-3">
-            <a class="twitter-timeline" data-lang="es" data-height="860" data-dnt="true" data-theme="light" href="https://twitter.com/Mazinger_jeta?ref_src=twsrc%5Etfw">Tweets by UABBarcelona</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-lang="es" data-height="860" data-dnt="true" data-theme="light" href="https://twitter.com/JpdiUab?ref_src=twsrc%5Etfw">Tweets by UABBarcelona</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         
 
