@@ -60,6 +60,6 @@ else
 
 }
 
-echo $SQL;
+//echo $SQL;
 }
 ?>

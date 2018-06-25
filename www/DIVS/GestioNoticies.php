@@ -106,7 +106,7 @@ function CarregaDIVNoticiesDret()
 ?>
 <table width="100%" cellpadding="0" cellspacing="6" border="0" align="center" class="fuenteGestionNoticia"> 
     <tr>
-    	<td class="fuenteTituloGestionNoticias" colspan="2" align="center"> Gesti&oacute;n de noticias</td>
+    	<td class="h2" colspan="2" align="center"> Gesti&oacute;n de noticias</td>
     </tr>
     <tr>
     	<td height="20px"></td>

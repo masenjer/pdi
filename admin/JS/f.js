@@ -597,6 +597,8 @@ function CopiaNomImatgeNoticia(IMG)
 
 function TancaGestorNoticies()
 {
+		document.location.reload();
+
 	NoticiesCarregaContingut();
 	NoticiesCarregaContingutHistoric();
 	$('#DIVGestioNoticies').fadeOut();
@@ -1423,6 +1425,8 @@ function AbreGestorEnDir()
 
 function TancaGestorEnDir()
 {
+		document.location.reload();
+
 	CarregaMenuEnDirHome();
 	$('#DIVGestioEnDir').fadeOut();
 }

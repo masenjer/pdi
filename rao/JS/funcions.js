@@ -342,6 +342,7 @@ function CarregaEnllacIntern(URL)
 
 function TancaGestorEnDir()
 {
+	document.location.reload();
 	//CarregaVideo();
 	CarregaMenuEnDirHome();
 	$('#DIVGestioEnDir').fadeOut();
