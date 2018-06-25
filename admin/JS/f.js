@@ -646,7 +646,7 @@ function MarcaLineaGrid(id)
 
 function CarregaUserGU(id)
 {
-	MarcaLineaGrid(id);
+	//MarcaLineaGrid(id);
 	$.get("PHP/CarregaUserGU.php",{id:id},LlegadaCarregaUserGU);	
 }
 
@@ -662,8 +662,10 @@ function LlegadaCarregaUserGU(data)
 	$("#Apellidos").val(cadena[1]);
 	$("#Email").val(cadena[2]);
 	$("#UsuarioGU").val(cadena[3]);
-	$("#PasswordGU").val(cadena[4]);
-	$("#Password2GU").val(cadena[4]);
+	//$("#PasswordGU").val(cadena[4]);
+	//$("#Password2GU").val(cadena[4]);
+	$("#PasswordGU").val("");
+	$("#Password2GU").val("");
 	
 	if (cadena[5] == 1)
 	{
@@ -738,7 +740,7 @@ function UpdateUserGU()
 	var A = $("#Apellidos").val();	
 	var E = $("#Email").val();	
 	var U = $("#UsuarioGU").val();	
-	var P = SHA1(($("#PasswordGU").val()));	
+	var P = ($("#PasswordGU").val())?SHA1(($("#PasswordGU").val())):"";	
 	var R1 = CompruebaSiChecked("CheckUsuario");	
 	var R2 = CompruebaSiChecked("CheckCreacion");
 	var R3 = CompruebaSiChecked("CheckEdicion");
@@ -746,7 +748,9 @@ function UpdateUserGU()
 	
 	if ( SHA1($("#PasswordGU").val()) ==  SHA1($("#Password2GU").val()))
 	{		
-		$.post("PHP/UserGUUpdate.php",{id:id,N:N,A:A,E:E,U:U,P:P,R1:R1,R2:R2,R3:R3,R4:R4},CarregaGridGU);
+		$.post("PHP/UserGUUpdate.php",{id:id,N:N,A:A,E:E,U:U,P:P,R1:R1,R2:R2,R3:R3,R4:R4},function (data){
+				alert("Registro guardado correctamente");
+				CarregaGridGU});
 	}
 	else
 	{

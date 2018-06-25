@@ -41,9 +41,9 @@ function CarregaPagina()
 	CompruebaSiMenuGU();
 
 	
-	DefineCalendario('FechaNoticia');
-	DefineCalendario('FechaNoticiaIN');
-	DefineCalendario('FechaNoticiaOUT');
+	//DefineCalendario('FechaNoticia');
+	//DefineCalendario('FechaNoticiaIN');
+	//DefineCalendario('FechaNoticiaOUT');
 
 	//NoticiesCarregaContingut();
 	//NoticiesCarregaContingutHistoric();

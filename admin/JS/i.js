@@ -37,11 +37,11 @@ $(document).ready(function(){
 			$('#TAInfoContacte').ckeditor(config1);
 		}
 		
-		
+		/*
 		DefineCalendario('FechaNoticia');
 		DefineCalendario('FechaNoticiaIN');
 		DefineCalendario('FechaNoticiaOUT');
-	
+	*/
 		
 		MenuNoticiesCarregaHistoric();
 		MenuNoticiesCarregaActiu();
